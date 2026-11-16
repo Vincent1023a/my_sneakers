@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>{{ page.title | escape }}{% unless page.url == "/" %}｜{{ site.title | escape }}{% endunless %}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <nav aria-label="主要導覽">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="court-mark" aria-hidden="true"></span>球鞋圖鑑</a>
+      <a class="nav-link" href="{{ '/wiki/' | relative_url }}">鞋款索引 <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main class="{% if page.url == '/' %}landing{% elsif page.url contains '/sneakers/' %}article{% else %}catalog{% endif %}">
+    {% unless page.url == '/' %}<h1>{{ page.title | escape }}</h1>{% endunless %}
+    {{ content }}
+  </main>
+</body>
+</html>

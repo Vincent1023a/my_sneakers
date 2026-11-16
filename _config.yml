@@ -1,0 +1,8 @@
+title: 球鞋圖鑑
+lang: zh-Hant
+markdown: kramdown
+exclude:
+  - AGENTS.md
+  - README.md
+  - raw
+  - wiki/log.md
